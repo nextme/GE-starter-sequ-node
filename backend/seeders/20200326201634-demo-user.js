@@ -16,6 +16,8 @@ module.exports = {
       firstName: 'John',
       lastName: 'Doe',
       email: 'demo@demo.com',
+      phone: '+972 2 1234567',
+      roleId:1,
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});

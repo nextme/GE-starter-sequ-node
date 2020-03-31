@@ -17,6 +17,21 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      phone:{
+        type: Sequelize.STRING
+      },
+     
+
+
+      roleId:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         
+          model: 'Roles',
+          key: 'id'
+        }
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

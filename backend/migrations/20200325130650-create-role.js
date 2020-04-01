@@ -22,9 +22,15 @@ module.exports = {
         allowNull: true,
         type: Sequelize.DATE
       }
-    });
-  },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Roles');
+    }).then(()=>{
+      queryInterface.bulkInsert('Roles', [
+        { roleTitle: 'Admin', desc: "Admin role" },
+        { roleTitle: 'Manager', desc: "Manager role" },
+        { roleTitle: 'Agent', desc: "Agent role" }
+      ], {});
+    })
+    },
+    down: (queryInterface, Sequelize) => {
+      return queryInterface.dropTable('Roles');
   }
 };

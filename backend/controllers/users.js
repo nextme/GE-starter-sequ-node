@@ -5,7 +5,7 @@ module.exports = {
             .create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
-                roleId: req.body.roleId
+                RoleId: req.body.roleId
                 
             })
             .then(user => res.status(201).json(

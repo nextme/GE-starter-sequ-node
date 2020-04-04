@@ -4,7 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
-
+const bodyParser = require('body-parser');
 const indexRouter = require("./routes/index");
 const testAPIRouter = require("./routes/testAPI");
 const usersRouter = require("./routes/users");
@@ -19,8 +19,11 @@ app.set("view engine", "jade");
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(require('method-override')());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
@@ -45,3 +48,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+// sc model:generate --name Restaurant --attributes phone:string,title:string,email:string,website:string,rating:integer

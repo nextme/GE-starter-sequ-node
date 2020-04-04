@@ -1,5 +1,8 @@
 const user = require('../models').User;
 module.exports = {
+    renderCreateView(req,res){
+        return res.render('create-user')
+    },
     create(req, res) {
         return user
             .create({

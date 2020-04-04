@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class="userform")
+    h1= 'Create User'
+    form(method='post', action='/users/create')
+      input(name='_method', value='POST', type='hidden')
+      div
+        label Username/Email:
+          input(name='username', value= '')
+      div
+        label Password:
+          input(name='password', value= '')
+      div
+        label Role:
+          input(name='roleId', value= '1')
+      div
+        input(type='submit', value='Save')
+

@@ -6,3 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+.userform {
+  margin:auto;
+  width:30%;
+  margin:10 auto;
+  background-color: aliceblue;
+}
+.userform > p,h1,input {
+  margin-left:10%;
+  /* padding-left: 10%; */
+}
+.userform  label {
+  margin-left: 10%;
+  padding-right: 30%;
+}
+input{
+  /* margin-left:10%; */
+  /* margin:auto; */
+  /* width:20% */
+}
